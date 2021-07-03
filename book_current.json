@@ -1,0 +1,22 @@
+{
+  "title": "Python心得：http网络库",
+  "description": "总结Python中的网络库，包括内置的urllib，以及第三方库requests，和通用的内容，比如常见User-Agent用户代理等。",
+  "pluginsConfig": {
+    "autocover": {
+      "title": "Gitbook演示"
+    },
+    "github-buttons": {
+      "buttons": [
+        {
+          "repo": "python_summary_http_lib"
+        }
+      ]
+    },
+    "sitemap-general": {
+      "prefix": "https://book.crifan.com/gitbook/python_summary_http_lib/website/"
+    },
+    "toolbar-button": {
+      "url": "http://book.crifan.com/books/python_summary_http_lib/pdf/python_summary_http_lib.pdf"
+    }
+  }
+}
