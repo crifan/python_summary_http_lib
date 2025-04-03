@@ -13,10 +13,10 @@
       ]
     },
     "sitemap-general": {
-      "prefix": "https://book.crifan.com/gitbook/python_summary_http_lib/website/"
+      "prefix": "https://book.crifan.org/books/python_summary_http_lib/website/"
     },
     "toolbar-button": {
-      "url": "http://book.crifan.com/books/python_summary_http_lib/pdf/python_summary_http_lib.pdf"
+      "url": "https://book.crifan.org/books/python_summary_http_lib/pdf/python_summary_http_lib.pdf"
     }
   }
 }

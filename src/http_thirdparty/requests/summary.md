@@ -21,6 +21,51 @@ print(r.url)
 # https://httpbin.org/get?key2=value2&key1=value1
 ```
 
+### 加代理
+
+* 说明：加上`proxies`参数
+
+* 举例：
+
+```py
+proxyDict = {
+  "http":  "http://127.0.0.1:58591",
+  "https": "http://127.0.0.1:58591",
+}
+
+...
+
+resp = requests.post(someUrl, proxies=proxyDict, headers=reqHeaderDict, data=reqBodyJsonStr)
+```
+
+额外说明：
+
+如果是带用户名和密码的（往往是第三方代理服务器），则代理地址是类似于这种：
+
+```py
+ProxyHost = "http-proxy-t3.dobel.cn"
+ProxyPort = "9180"
+
+#账号密码
+ProxyUser = "YourUserName"
+ProxyPass = "YourPassword"
+
+ProxyUri = "http://%(user)s:%(pass)s@%(host)s:%(port)s" % {
+  "host" : ProxyHost,
+  "port" : ProxyPort,
+  "user" : ProxyUser,
+  "pass" : ProxyPass,
+}
+```
+
+-》 对应完整代理地址，类似这种：
+
+`http://YourUserName:YourPassword@http-proxy-t3.dobel.cn:9180`
+
+更多例子和解释，详见：
+
+[requests · 网络中转站：代理技术](https://book.crifan.org/books/web_transfer_proxy_tech/website/add_proxy/program_language/python/requests.html)
+
 ### header和post的body
 
 举例：
@@ -30,11 +75,11 @@ gHeaders = {
   "Authorization": "JWT xxx", # JWT eyJ0xxxxxxxiJ9.xxxxxxxxx.hklGrByjU-v_xxxxx_-dc
 }
 
-  postBody = {
-    "username": Username,
-    "password": Password,
-  }
-  getTokenResp = requests.post(GetJwtTokenUrl, data=postBody)
+postBodyDict = {
+  "username": Username,
+  "password": Password,
+}
+getTokenResp = requests.post(GetJwtTokenUrl, data=postBodyDict)
 
 saveScriptResp = requests.post(CreateScriptUrl, headers=gHeaders, data=curScriptDict)
 ```
